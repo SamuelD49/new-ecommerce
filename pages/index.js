@@ -3,10 +3,11 @@ import { initMongoose } from "@/lib/mongoose";
 import Product from "../components/Product";
 // import {initMongoose} from "../lib/mongoose";
 import {findAllProducts} from "./api/products";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 // import Layout from "../components/Layout";
 
 import { useEffect, useState } from "react"
+import Layout from "@/components/Layout";
 
 // export default function Home({products}) {
 //   const [phrase,setPhrase] = useState('');
@@ -67,7 +68,7 @@ export default function Home({products}) {
   } 
 
   return(
-<div className="p-5">
+<Layout>
   <input value={phrase} onChange={e => setPhrase(e.target.value)} type="text" placeholder="Search for products ..." className="bg-gray-100 w-full py-2 px-4 rouded-xl"/>
   <div>
     {categoriesNames.map(categoryName => (
@@ -95,7 +96,8 @@ export default function Home({products}) {
    
   </div>
   </div>
-  </div>
+              
+  </Layout>
   )
 }
 
